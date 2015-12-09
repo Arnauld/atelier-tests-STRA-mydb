@@ -1,0 +1,29 @@
+{
+  "mycompany.client.model.Client": {
+    "normal@monsite.fr": "{\n  \"email\": \"normal@monsite.fr\",\n  \"nom\": \"LeGrand\",\n  \"prenom\": \"Paul\",\n  \"accountType\": \"STANDART\",\n  \"activationDate\": \"Nov 30, 2015 11:14:16 PM\"\n}",
+    "platinium@monsite.fr": "{\n  \"email\": \"platinium@monsite.fr\",\n  \"nom\": \"Lagare\",\n  \"prenom\": \"Jean\",\n  \"accountType\": \"PLATINIUM\",\n  \"activationDate\": \"Dec 4, 2015 11:14:16 PM\"\n}",
+    "inactif@monsite.fr": "{\n  \"email\": \"inactif@monsite.fr\",\n  \"nom\": \"Durand\",\n  \"prenom\": \"Marc\",\n  \"accountType\": \"STANDART\"\n}"
+  },
+  "java.lang.Integer": {
+    "71e8e7e5c52a45f682cd23021931d4ea": "0",
+    "dde361414fb2cd113346c7341fc6805f": "10",
+    "b8ec935decba42bfb4551b357ef04be1": "5",
+    "8e5cfaee57c942a8b8304bfdb68b6014": "9",
+    "1fc6846dde361645fb2cd05f1133c7d4": "2",
+    "fc7e3ef376054109ac34db53ec56961e": "6",
+    "113346dde361414fb2cdc7d41fc6805f": "2",
+    "2ed4a086cee94a8496816d11b9790916": "3",
+    "61645fb2113346dde3cdc7d41fc6805f": "5"
+  },
+  "mycompany.catalogue.model.ProduitCatalogue": {
+    "71e8e7e5c52a45f682cd23021931d4ea": "{\n  \"reference\": \"71e8e7e5c52a45f682cd23021931d4ea\",\n  \"libelle\": \"Durex feeling sensual x10\",\n  \"prixAchat\": {\n    \"prix\": 10.45\n  },\n  \"marge\": {\n    \"prix\": 4\n  },\n  \"categorieProduit\": \"PRESERVATIF\",\n  \"actif\": true\n}",
+    "dde361414fb2cd113346c7341fc6805f": "{\n  \"reference\": \"dde361414fb2cd113346c7341fc6805f\",\n  \"libelle\": \"Colgate fraisheur Plus\",\n  \"prixAchat\": {\n    \"prix\": 2.65\n  },\n  \"marge\": {\n    \"prix\": 1.32\n  },\n  \"categorieProduit\": \"HYGIENE_DENTAIRE\",\n  \"actif\": false\n}",
+    "b8ec935decba42bfb4551b357ef04be1": "{\n  \"reference\": \"b8ec935decba42bfb4551b357ef04be1\",\n  \"libelle\": \"Durex Play\",\n  \"prixAchat\": {\n    \"prix\": 7.5\n  },\n  \"marge\": {\n    \"prix\": 1.5\n  },\n  \"categorieProduit\": \"PRESERVATIF\",\n  \"actif\": true\n}",
+    "8e5cfaee57c942a8b8304bfdb68b6014": "{\n  \"reference\": \"8e5cfaee57c942a8b8304bfdb68b6014\",\n  \"libelle\": \"Pastilles vichy\",\n  \"prixAchat\": {\n    \"prix\": 12.6\n  },\n  \"marge\": {\n    \"prix\": 7.05\n  },\n  \"categorieProduit\": \"CONFISERIE\",\n  \"actif\": true\n}",
+    "1fc6846dde361645fb2cd05f1133c7d4": "{\n  \"reference\": \"1fc6846dde361645fb2cd05f1133c7d4\",\n  \"libelle\": \"Se soigner avec les plantes (des pieds)\",\n  \"prixAchat\": {\n    \"prix\": 10.5\n  },\n  \"marge\": {\n    \"prix\": 4\n  },\n  \"categorieProduit\": \"LIVRE\",\n  \"actif\": true\n}",
+    "fc7e3ef376054109ac34db53ec56961e": "{\n  \"reference\": \"fc7e3ef376054109ac34db53ec56961e\",\n  \"libelle\": \"Doliprane\",\n  \"prixAchat\": {\n    \"prix\": 7.9\n  },\n  \"marge\": {\n    \"prix\": 1\n  },\n  \"categorieProduit\": \"MEDICAMENT_NON_REMBOURSABLE\",\n  \"actif\": true\n}",
+    "113346dde361414fb2cdc7d41fc6805f": "{\n  \"reference\": \"113346dde361414fb2cdc7d41fc6805f\",\n  \"libelle\": \"Actiranox\",\n  \"prixAchat\": {\n    \"prix\": 10.5\n  },\n  \"marge\": {\n    \"prix\": 3.21\n  },\n  \"categorieProduit\": \"MEDICAMENT_REMBOURSABLE\",\n  \"actif\": false\n}",
+    "2ed4a086cee94a8496816d11b9790916": "{\n  \"reference\": \"2ed4a086cee94a8496816d11b9790916\",\n  \"libelle\": \"Efferalgan\",\n  \"prixAchat\": {\n    \"prix\": 8.6\n  },\n  \"marge\": {\n    \"prix\": 0.9\n  },\n  \"categorieProduit\": \"MEDICAMENT_NON_REMBOURSABLE\",\n  \"actif\": true\n}",
+    "61645fb2113346dde3cdc7d41fc6805f": "{\n  \"reference\": \"61645fb2113346dde3cdc7d41fc6805f\",\n  \"libelle\": \"Bequilles\",\n  \"prixAchat\": {\n    \"prix\": 50.5\n  },\n  \"marge\": {\n    \"prix\": 30\n  },\n  \"categorieProduit\": \"EQUIPEMENT_PERSONNE_DEPENDANTE\",\n  \"actif\": false\n}"
+  }
+}
