@@ -1,7 +1,5 @@
 package mycompany.data.db;
 
-import mycompany.data.DatabaseException;
-import mycompany.data.Settings;
 import org.apache.commons.io.IOUtils;
 import org.h2.jdbcx.JdbcConnectionPool;
 import org.skife.jdbi.v2.DBI;
@@ -11,6 +9,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * @author <a href="http://twitter.com/aloyer">@aloyer</a>
@@ -18,30 +19,45 @@ import java.io.InputStream;
 public class DB {
     private static final Logger LOG = LoggerFactory.getLogger(DB.class);
 
-    private static DB instance = new DB(new Settings());
+    private static DB instance = new DB(new Settings(), RandomEvent.get());
+    private JdbcConnectionPool ds;
 
     public static DB getInstance() {
         return instance;
     }
 
     private final Settings settings;
+    private final RandomEvent randomEvent;
     private DBI dbi;
+    private volatile boolean connected = false;
 
-    public DB(Settings settings) {
+    DB(Settings settings, RandomEvent randomEvent) {
         this.settings = settings;
+        this.randomEvent = randomEvent;
     }
 
-    public void connect() {
+    public synchronized DB connect() {
+        if(connected)
+            return this;
+
+        connected = true;
         LOG.info("Connecting to database...");
-        JdbcConnectionPool ds = JdbcConnectionPool.create(
+        ds = JdbcConnectionPool.create(
                 settings.dbUrl(),
                 settings.dbUsername(),
                 settings.dbPassword());
         dbi = new DBI(ds);
         checkInitialState();
+        return this;
     }
 
-    private void checkInitialState() {
+    public synchronized void disconnect() {
+        LOG.info("Disconnecting from database...");
+        ds.dispose();
+        connected = false;
+    }
+
+    private synchronized void checkInitialState() {
         Handle h = dbi.open();
 
         try {
@@ -58,7 +74,7 @@ public class DB {
     }
 
     private void initInitialState() {
-        InputStream in = getClass().getResourceAsStream("/init.sql");
+        InputStream in = getClass().getResourceAsStream("/init_aefb4a.sql");
 
         Handle h = null;
         try {
@@ -77,8 +93,21 @@ public class DB {
 
     }
 
+    @SuppressWarnings("unchecked")
     public <T> T open(Class<T> daoType) {
-        return dbi.open(daoType);
-    }
+        if(!connected)
+            throw new DatabaseException("Connect database first", null);
 
+        if (!daoType.isInterface())
+            throw new DatabaseException("Invalid dao type", null);
+
+        final T impl = dbi.open(daoType);
+        return (T) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(), new Class[]{daoType}, new InvocationHandler() {
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                if (randomEvent != null)
+                    randomEvent.what();
+                return method.invoke(impl, args);
+            }
+        });
+    }
 }

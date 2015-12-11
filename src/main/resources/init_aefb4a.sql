@@ -35,23 +35,23 @@ INSERT INTO stocks (id, quantity) VALUES
 CREATE TABLE produit_catalogues (
   reference        VARCHAR(255) PRIMARY KEY,
   libelle          VARCHAR(255),
-  prixAchat        VARCHAR(20),
-  marge            VARCHAR(20),
+  prixAchat        BIGINT,
+  marge            BIGINT,
   categorieProduit VARCHAR(255),
   actif            BOOLEAN,
 );
 
 INSERT INTO produit_catalogues (reference, libelle, prixAchat, marge, categorieProduit, actif)
 VALUES
-  ('71e8e7e5c52a45f682cd23021931d4ea', 'Durex feeling sensual x10', '10.45', '4', 'PRESERVATIF', TRUE),
-  ('dde361414fb2cd113346c7341fc6805f', 'Colgate fraisheur Plus', '2.65', '1.32', 'HYGIENE_DENTAIRE', FALSE),
-  ('b8ec935decba42bfb4551b357ef04be1', 'Durex Play', '7.5', '1.5', 'PRESERVATIF', TRUE),
-  ('8e5cfaee57c942a8b8304bfdb68b6014', 'Pastilles vichy', '12.6', '7.05', 'CONFISERIE', TRUE),
-  ('1fc6846dde361645fb2cd05f1133c7d4', 'Se soigner avec les plantes (des pieds)', '10.5', '4', 'LIVRE', TRUE),
-  ('fc7e3ef376054109ac34db53ec56961e', 'Doliprane', '7.9', '1', 'MEDICAMENT_NON_REMBOURSABLE', TRUE),
-  ('113346dde361414fb2cdc7d41fc6805f', 'Actiranox', '10.5', '3.21', 'MEDICAMENT_REMBOURSABLE', FALSE),
-  ('2ed4a086cee94a8496816d11b9790916', 'Efferalgan', '8.6', '0.9', 'MEDICAMENT_NON_REMBOURSABLE', TRUE),
-  ('61645fb2113346dde3cdc7d41fc6805f', 'Bequilles', '50.5', '30', 'EQUIPEMENT_PERSONNE_DEPENDANTE', FALSE);
+  ('71e8e7e5c52a45f682cd23021931d4ea', 'Durex feeling sensual x10', 1045, 400, 'PRESERVATIF', TRUE),
+  ('dde361414fb2cd113346c7341fc6805f', 'Colgate fraisheur Plus', 265, 132, 'HYGIENE_DENTAIRE', FALSE),
+  ('b8ec935decba42bfb4551b357ef04be1', 'Durex Play', 750, 150, 'PRESERVATIF', TRUE),
+  ('8e5cfaee57c942a8b8304bfdb68b6014', 'Pastilles vichy', 1260, 705, 'CONFISERIE', TRUE),
+  ('1fc6846dde361645fb2cd05f1133c7d4', 'Se soigner avec les plantes (des pieds)', 1050, 400, 'LIVRE', TRUE),
+  ('fc7e3ef376054109ac34db53ec56961e', 'Doliprane', 790, 100, 'MEDICAMENT_NON_REMBOURSABLE', TRUE),
+  ('113346dde361414fb2cdc7d41fc6805f', 'Actiranox', 1050, 321, 'MEDICAMENT_REMBOURSABLE', FALSE),
+  ('2ed4a086cee94a8496816d11b9790916', 'Efferalgan', 860, 90, 'MEDICAMENT_NON_REMBOURSABLE', TRUE),
+  ('61645fb2113346dde3cdc7d41fc6805f', 'Bequilles', 5050, 3000, 'EQUIPEMENT_PERSONNE_DEPENDANTE', FALSE);
 
 
 

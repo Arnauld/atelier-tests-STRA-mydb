@@ -1,4 +1,4 @@
-package mycompany.data;
+package mycompany.data.db;
 
 import org.apache.commons.io.IOUtils;
 

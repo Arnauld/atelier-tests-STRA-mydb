@@ -1,6 +1,6 @@
-package mycompany.data.internal;
+package mycompany.data.db;
 
-import mycompany.data.internal.RandomEvent;
+import mycompany.data.db.RandomEvent;
 import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
