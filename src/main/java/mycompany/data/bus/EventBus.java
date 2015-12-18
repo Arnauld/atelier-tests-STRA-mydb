@@ -9,6 +9,7 @@ import java.io.Serializable;
  * @author <a href="http://twitter.com/aloyer">@aloyer</a>
  */
 public class EventBus {
+
     public static void publish(Serializable message) {
         try {
             ByteArrayOutputStream bout = new ByteArrayOutputStream();
